@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#ringGrad)" />
+  <circle cx="100" cy="100" r="82" fill="#ffffff" />
+  <rect x="83" y="45" width="34" height="80" fill="#dc2626" rx="8" />
+  <rect x="65" y="73" width="70" height="20" fill="#dc2626" rx="10" />
+  <path d="M44 136 C58 120 78 116 100 118 C122 116 142 120 156 136 L146 142 C134 130 124 128 100 130 C76 128 66 130 54 142 Z" fill="#111827" />
+  <path d="M60 138 C74 128 126 128 140 138" stroke="#9ca3af" stroke-width="4" fill="none" stroke-linecap="round" />
+  <path d="M58 154 L142 154" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
+  <text x="100" y="30" font-size="12" fill="#0f172a" font-family="Inter, sans-serif" font-weight="700" text-anchor="middle">JOURNEY CHRISTIAN</text>
+  <text x="100" y="42" font-size="12" fill="#0f172a" font-family="Inter, sans-serif" font-weight="700" text-anchor="middle">TRAINING</text>
+  <text x="100" y="175" font-size="16" fill="#111827" font-family="Inter, sans-serif" font-weight="700" text-anchor="middle">INSTITUTE</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#g3)" />
+  <path d="M70 340 C180 240 260 240 360 300 C420 340 520 320 640 260 L660 320 L80 380 Z" fill="#ffffff" opacity="0.2" />
+  <text x="80" y="110" fill="#ffffff" font-size="48" font-family="Inter, sans-serif" font-weight="700">Career Growth</text>
+  <text x="80" y="170" fill="#d9f99d" font-size="22" font-family="Inter, sans-serif">Build skills for the future</text>
+</svg>

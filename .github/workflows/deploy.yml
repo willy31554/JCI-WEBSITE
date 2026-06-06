@@ -1,0 +1,48 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to main site
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
+          server-dir: ${{ secrets.FTP_MAIN_DIR }}
+
+      - name: Deploy to test subdomain (optional)
+        if: ${{ secrets.FTP_TEST_DIR != '' }}
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
+          server-dir: ${{ secrets.FTP_TEST_DIR }}
+
+# Required repo secrets:
+# FTP_SERVER - your hostinger FTP host (e.g., ftp.your-domain.com or server IP)
+# FTP_USERNAME - FTP username
+# FTP_PASSWORD - FTP password
+# FTP_MAIN_DIR - remote directory for main site (e.g. /public_html)
+# FTP_TEST_DIR - remote directory for test subdomain (e.g. /public_html/test) OR leave empty to skip
