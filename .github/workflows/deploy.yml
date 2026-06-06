@@ -7,6 +7,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FTP_TEST_DIR: ${{ secrets.FTP_TEST_DIR }}
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +33,7 @@ jobs:
           server-dir: ${{ secrets.FTP_MAIN_DIR }}
 
       - name: Deploy to test subdomain (optional)
-        if: ${{ secrets.FTP_TEST_DIR != '' }}
+        if: ${{ env.FTP_TEST_DIR != '' }}
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
